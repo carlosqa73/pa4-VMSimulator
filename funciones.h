@@ -18,8 +18,3 @@ int getOffset(int dirvirtual);
 //Funcion para obtener la direccion fisica a partir de una direccion virtual
 int direccionFisica(int dirvirtual);
 
-//Funcion para consultar en el Table lookaside buffer
-//int consultarTLB(int numeroPagina, int(*)[2] tlb);
-
-//Funcion para actualizar el contenido del TLB
-//void actualizarTLB(int numeroPagina, int frame, int(*)[2] tlb, int siguiente, int anterior);

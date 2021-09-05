@@ -37,13 +37,13 @@ int main(int argc, char* argv[]){
 		}
 
 		//Abrir el backing store
-		//if((filestore = fopen("BACKING_STORE.bin", "r")) == NULL){
-		//	printf("No se pudo abrir el archivo.\n");
-		//	exit(1);
-		//}
+		if((filestore = fopen("BACKING_STORE.bin", "r")) == NULL){
+			printf("No se pudo abrir el archivo.\n");
+			exit(1);
+		}
 
-		//int stfd = fileno(filestore);
-		int stfd = open("BACKING_STORE.bin", O_RDONLY);
+		int stfd = fileno(filestore);
+		//int stfd = open("BACKING_STORE.bin", O_RDONLY);
 		char* datos = mmap(0,(256*256), PROT_READ, MAP_SHARED, stfd, 0);
 
 		//Verificar el mapeo
