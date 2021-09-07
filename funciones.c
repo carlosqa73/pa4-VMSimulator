@@ -6,11 +6,11 @@ int pageNumber(int dirvirtual){
 }
 
 int getOffset(int dirvirtual){
-	int mask = 255; 
-	return dirvirtual & mask;
+	int mask = 255;
+	return dirvirtual & mask; //Se realiza la operacion AND para bits y se retorna el valor
 }
 
 int direccionFisica(int dirvirtual){
-	int dirfisica = pageNumber(dirvirtual) + getOffset(dirvirtual);
+	int dirfisica = pageNumber(dirvirtual) + getOffset(dirvirtual); //La direccion fisica es la suma del numero de pagina y el offset.
 	return dirfisica;
 }
