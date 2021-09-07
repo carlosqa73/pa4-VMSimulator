@@ -69,11 +69,11 @@ int main(int argc, char* argv[]){
 				if(indicem != -1){		//Pregunto si es que la memoria esta llena
 
 					if(fseek(filestore, numeroPagina*256, SEEK_SET) != 0){			//salto a la posicion del numero de pagina multiplicado por 256 (tamano de una entrada)
-                        fprintf(stderr, "Error al leer el almacen de respaldo.\n");	//Informo si hay error.
-	                }
-        	    	if(fread(buffer, sizeof(int), 256, filestore) == 0){			//Leo 256 bytes y los guardo en un buffer temporal
-                	    fprintf(stderr, "Error al escribir en buffer.\n");		//Informo si hay error.
-                    }
+                        			fprintf(stderr, "Error al leer el almacen de respaldo.\n");	//Informo si hay error.
+	                		}
+        	    			if(fread(buffer, sizeof(int), 256, filestore) == 0){			//Leo 256 bytes y los guardo en un buffer temporal
+                	    			fprintf(stderr, "Error al escribir en buffer.\n");		//Informo si hay error.
+                   			 }
 
 					memcpy(memoria+indicem, buffer, 256);					//Copio el contenido del buffer a la memoria fisica en la posicion del indicem
 
@@ -91,9 +91,9 @@ int main(int argc, char* argv[]){
 			}
 
 			fprintf(fileout, "Virtual address: %d | ", direccionv);
-            fprintf(fileout, "Physical address: %d | ", direccionf);
-            fprintf(fileout, "Valor: %d", valor);
-            fprintf(fileout, "\n");
+            		fprintf(fileout, "Physical address: %d | ", direccionf);
+            		fprintf(fileout, "Valor: %d", valor);
+            		fprintf(fileout, "\n");
 		}
 
 		fclose(filein);
